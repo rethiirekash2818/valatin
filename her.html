@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekashini ❤️ | Forever</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:#f8f5f2;
+    overflow-x:hidden;
+}
+
+/* Progress Bar */
+#progressBar{
+    position:fixed;
+    top:0;
+    left:0;
+    height:4px;
+    background:linear-gradient(90deg,#ffd89b,#ff7eb3);
+    width:0%;
+    z-index:9999;
+}
+
+/* Headings */
+h1,h2,h3{
+    font-family:'Cormorant Garamond',serif;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+    opacity:0;
+    animation:fadeIn 2s forwards;
+}
+
+@keyframes fadeIn{
+    to{opacity:1;}
+}
+
+.hero h1{
+    font-size:65px;
+    background:linear-gradient(90deg,#ffd89b,#ff7eb3);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:22px;
+    max-width:700px;
+}
+
+/* Sections */
+section{
+    padding:100px 10%;
+}
+
+.card{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    padding:60px;
+    border-radius:30px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.5);
+    margin-bottom:60px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+h2{
+    font-size:40px;
+    margin-bottom:20px;
+    background:linear-gradient(90deg,#ffd89b,#ff7eb3);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+/* Grid */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.box{
+    background:rgba(255,255,255,0.08);
+    padding:25px;
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.box:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Timer */
+.counter{
+    font-size:28px;
+    margin-top:20px;
+}
+
+/* Final Glow */
+.final{
+    text-align:center;
+    font-size:48px;
+    margin-top:40px;
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 10px #ffd89b;}
+    to{text-shadow:0 0 40px #ff7eb3;}
+}
+
+/* Floating Lights */
+.light{
+    position:fixed;
+    bottom:-20px;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    opacity:0.3;
+    animation:float 12s linear infinite;
+}
+
+@keyframes float{
+    from{transform:translateY(0);}
+    to{transform:translateY(-110vh);}
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div id="progressBar"></div>
+
+<div class="hero">
+<h1>Rekashini ❤️</h1>
+<p>
+In a world of temporary things,
+I choose something permanent.
+I choose you.
+</p>
+</div>
+
+<section>
+
+<div class="card reveal">
+<h2>A Letter From My Heart</h2>
+<p>
+From the moment you entered my life,
+everything felt different.
+Not louder.
+Not faster.
+Just deeper.
+</p>
+<p style="margin-top:20px;">
+You became my peace in chaos,
+my comfort in silence,
+my strength in weakness.
+</p>
+</div>
+
+<div class="card reveal">
+<h2>The Little Things I Love</h2>
+<div class="grid">
+<div class="box">Your genuine smile.</div>
+<div class="box">Your emotional strength.</div>
+<div class="box">Your patience.</div>
+<div class="box">Your deep thinking.</div>
+<div class="box">Your calm presence.</div>
+<div class="box">The way you care silently.</div>
+</div>
+</div>
+
+<div class="card reveal">
+<h2>My Promise To You</h2>
+<div class="grid">
+<div class="box">I promise to respect you always.</div>
+<div class="box">I promise to listen before reacting.</div>
+<div class="box">I promise loyalty beyond doubt.</div>
+<div class="box">I promise to protect your heart.</div>
+<div class="box">I promise to support your dreams.</div>
+<div class="box">I promise to choose you daily.</div>
+</div>
+</div>
+
+<div class="card reveal">
+<h2>Choosing You Since</h2>
+<div class="counter" id="loveCounter"></div>
+</div>
+
+<div class="card reveal">
+<h2>The Future I See</h2>
+<p>
+More laughter.
+More growth.
+More understanding.
+More shared dreams.
+A life built together.
+</p>
+</div>
+
+<div class="card reveal">
+<div class="final">
+I Choose You.  
+Today.  
+Tomorrow.  
+Forever. ♾️
+</div>
+</div>
+
+</section>
+
+<footer>
+Made with love ❤️
+</footer>
+
+<script>
+
+/* Reveal Animation */
+const reveals=document.querySelectorAll(".reveal");
+window.addEventListener("scroll",()=>{
+reveals.forEach(el=>{
+if(el.getBoundingClientRect().top<window.innerHeight-100){
+el.classList.add("show");
+}});
+});
+
+/* Timer */
+const startDate=new Date("October 16, 2025 11:29:29").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const diff=now-startDate;
+const days=Math.floor(diff/(1000*60*60*24));
+const hours=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+const minutes=Math.floor((diff%(1000*60*60))/(1000*60));
+const seconds=Math.floor((diff%(1000*60))/1000);
+document.getElementById("loveCounter").innerHTML=
+days+" Days ❤️ "+hours+" Hours 💞 "+minutes+" Minutes 💖 "+seconds+" Seconds";
+},1000);
+
+/* Scroll Progress */
+window.addEventListener("scroll",()=>{
+let winScroll=document.documentElement.scrollTop;
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+let scrolled=(winScroll/height)*100;
+document.getElementById("progressBar").style.width=scrolled+"%";
+});
+
+/* Floating Lights */
+for(let i=0;i<30;i++){
+let light=document.createElement("div");
+light.classList.add("light");
+light.style.left=Math.random()*100+"vw";
+light.style.animationDuration=(10+Math.random()*10)+"s";
+document.body.appendChild(light);
+}
+
+</script>
+
+</body>
+</html>
